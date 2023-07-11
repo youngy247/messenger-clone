@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useState } from "react";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 type Variant = 'LOGIN' | 'REGISTER'
 
@@ -30,6 +30,18 @@ const AuthForm = () => {
             password: ''
         }
     })
+
+    const onSubmit: SubmitHandler<FieldValues> = (date) => {
+        setIsLoading(true)
+
+        if (variant === 'REGISTER'){
+            // Axios Register 
+        }
+
+        if (variant === 'LOGIN') {
+            // NextAuth SignIn
+        }
+    }
 
     return ( 
         <div>Auth Form!</div>
