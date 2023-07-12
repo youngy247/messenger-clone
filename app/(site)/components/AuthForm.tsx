@@ -74,9 +74,25 @@ const AuthForm = () => {
                     className="space-y-6"
                     onSubmit={handleSubmit(onSubmit)}
                 >
+                    {variant === 'REGISTER' && (
+                        <Input 
+                            id="name" 
+                            label="Name" 
+                            register={register}
+                            errors={errors}
+                        />
+                    )}
                     <Input 
                         id="email" 
-                        label="Email" 
+                        label="Email address" 
+                        type="email"
+                        register={register}
+                        errors={errors}
+                    />
+                    <Input 
+                        id="password" 
+                        label="Password" 
+                        type="password"
                         register={register}
                         errors={errors}
                     />
