@@ -1,5 +1,7 @@
 'use client';
 
+
+import Input from "@/app/components/inputs/Input";
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
@@ -31,7 +33,7 @@ const AuthForm = () => {
         }
     })
 
-    const onSubmit: SubmitHandler<FieldValues> = (date) => {
+    const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true)
 
         if (variant === 'REGISTER'){
@@ -68,6 +70,13 @@ const AuthForm = () => {
                     sm:px-10
                 "
             >
+                <form
+                    className="space-y-6"
+                    onSubmit={handleSubmit(onSubmit)}
+                >
+                    <Input />
+                </form>
+
 
             </div>
 
